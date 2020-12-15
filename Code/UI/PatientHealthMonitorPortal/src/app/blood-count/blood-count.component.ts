@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blood-count.component.css']
 })
 export class BloodCountComponent implements OnInit {
-
+public persondata=[];
   constructor() { }
 
   ngOnInit(): void {
