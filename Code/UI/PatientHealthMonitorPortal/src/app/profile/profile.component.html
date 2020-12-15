@@ -1,0 +1,49 @@
+<a href="/home">Home</a>
+<div align="center" >
+    <h2>Profile</h2>
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <table>
+            <tr>
+                <td>UserId</td>
+                <td><input type="text" formControlName="userId"></td>
+             </tr>
+             <tr>
+         <tr>
+            <td>Password</td>
+            <td><input type="password" formControlName="password"></td>
+         </tr>
+         <tr>
+            <td>age</td>
+            <td><input type="text" formControlName="age"></td>
+         </tr>
+         <tr>
+            <td>EmailId</td>
+            <td><input type="text" formControlName="emailid"></td>
+         </tr>
+         <tr>
+            <td>pinCode</td>
+            <td><input type="text" formControlName="pinCode"></td>
+         </tr>
+         <tr>
+            <td>City</td>
+            <td><input type="text" formControlName="city"></td>
+         </tr>
+         <tr>
+            <td>Country</td>
+            <td><input type="text" formControlName="country"></td>
+         </tr>
+         <tr>
+            <td>LastName</td>
+            <td><input type="text" formControlName="gaurdianLastName"></td>
+         </tr>
+         <tr>
+          <td>FirstName</td>
+          <td><input type="text" formControlName="gaurdianFirstName"></td>
+       </tr>
+         <tr align="center">
+             <td colspan="2"><input type="submit"value="Update"></td>
+         </tr>
+        </table>
+    </form>    
+</div>
+

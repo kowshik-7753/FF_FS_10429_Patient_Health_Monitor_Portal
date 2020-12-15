@@ -1,0 +1,52 @@
+<a href="/home">Home</a>
+<div align="center">
+    <h2>Login Page</h2>
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <table>
+            <tr>
+                <td>UserId</td>
+                <td><input type="text" formControlName="userid"></td>
+                   <td>
+                        <span *ngIf="submitted && formdata.controls.userid.errors?.required" style="color:red">User id is required</span>
+                      </td>
+            </tr>
+            <tr>
+                <td>Rbc</td>
+                <td><input type="text" formControlName="rbc"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.rbc.errors?.required" style="color:red">rbc is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>Wbc</td>
+                <td><input type="text" formControlName="wbc"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.wbc.errors?.required" style="color:red">wbc is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="text" formControlName="platelet"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.platelet.errors?.required" style="color:red">plattelet is required</span>
+                  </td>
+            </tr>
+            <tr align="center">
+                <td colspan="3"><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div>
+    <table>
+        <tr *ngFor ="let item of persondata;let i=index">
+            <td>{{item.userid}}</td>
+            <td>{{item.rbc}}</td>
+            <td>{{item.wbc}}</td>
+            <td>{{item.platelet}}</td>
+            <!-- <td>{{item.total}}</td> -->
+        </tr>
+    </table>
+</div>
+<router-outlet></router-outlet>
+

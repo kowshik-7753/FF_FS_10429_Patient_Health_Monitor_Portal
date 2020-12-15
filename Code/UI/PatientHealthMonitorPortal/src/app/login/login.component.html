@@ -1,0 +1,28 @@
+<div align="center">
+    <h2>Login Page</h2>
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <table>
+            <tr>
+                <td>UserId</td>
+                <td><input type="text" formControlName="userid"></td>
+                   <td>
+                        <span *ngIf="submitted && formdata.controls.userid.errors?.required" style="color:red">User id is required</span>
+                      </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" formControlName="password"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.password.errors?.required" style="color:red">password is required</span>
+                  </td>
+            </tr>
+            <tr align="center">
+                <td colspan="3"><input type="submit" value="login"></td>
+            </tr>
+            <tr align="center">
+                <td colspan="3">NewUser?<a href="/register">signup</a></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<router-outlet></router-outlet>

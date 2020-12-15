@@ -1,0 +1,48 @@
+<a href="/home">Home</a>
+<div align="center">
+    <h2>BMI Calculator</h2>
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <table>
+            <tr>
+                <td>UserId</td>
+                <td><input type="text" formControlName="userid"></td>
+                   <td>
+                        <span *ngIf="submitted && formdata.controls.userid.errors?.required" style="color:red">User id is required</span>
+                      </td>
+            </tr>
+            <tr>
+                <td>Weight</td>
+                <td><input type="text" formControlName="weight"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.weight.errors?.required" style="color:red">weight is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>Height</td>
+                <td><input type="text" formControlName="height"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.height.errors?.required" style="color:red">Height is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="date" formControlName="date"></td>
+            </tr>
+            <tr align="center">
+                <td colspan="3"><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div>
+    <table>
+        <tr *ngFor ="let item of persondata;let i=index">
+            <td>{{item.userid}}</td>
+            <td>{{item.weight}}</td>
+            <td>{{item.height}}</td>
+            <td>{{item.date}}</td>
+            <td>{{item.total}}</td>
+        </tr>
+    </table>
+</div>
+<router-outlet></router-outlet>
