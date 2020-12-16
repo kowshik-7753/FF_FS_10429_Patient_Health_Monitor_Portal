@@ -1,1 +1,76 @@
-<p>diabetes works!</p>
+<a href="/home">Home</a>
+<div align="center">
+    <h2>Diabetes</h2>
+    <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+        <table>
+            <tr>
+                <td>UserId</td>
+                <td><input type="text" formControlName="userid"></td>
+                   <td>
+                        <span *ngIf="submitted && formdata.controls.userid.errors?.required" style="color:red">User id is required</span>
+                      </td>
+            </tr>
+            <tr>
+                <td>bmi</td>
+                <td><input type="text" formControlName="bmi"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.bmi.errors?.required" style="color:red">bmi is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>bPSystolicValue</td>
+                <td><input type="text" formControlName="bpsystolicValue"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.bpsystolicValue.errors?.required" style="color:red">bPSystolicValue is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>bPDiastolicValue</td>
+                <td><input type="text" formControlName="bpdiastolicValue"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.bpdiastolicValue.errors?.required" style="color:red">bPDiastolicValue is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>fastingGlucose</td>
+                <td><input type="text" formControlName="fastingGlucose"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.fastingGlucose.errors?.required" style="color:red">fastingGlucose is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>hDLCholesterol</td>
+                <td><input type="text" formControlName="hdlcholesterol"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.hdlcholesterol.errors?.required" style="color:red">hDLCholesterol is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>serumTriglycerides</td>
+                <td><input type="text" formControlName="serumTriglycerides"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.serumTriglycerides.errors?.required" style="color:red">serumTriglycerides is required</span>
+                  </td>
+            </tr>
+            
+            <tr align="center">
+                <td colspan="3"><input type="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div align ="center">
+    <table > 
+        <tr *ngFor ="let item of persondata;let i=index">
+            <td>{{item.userId}}|</td>
+            <td>{{item.bmi}}|</td>
+            <td>{{item.bpsystolicValue}}|</td>
+            <td>{{item.bpdiastolicValue}}|</td>
+            <td>{{item.fastingGlucose}}|</td>
+            <td>{{item.hdlcholesterol}}|</td>
+            <td>{{item.serumTriglycerides}}|</td>
+            <td>{{item.diabetesResult}}|</td>
+        </tr>
+    </table>
+</div>

@@ -11,9 +11,6 @@ export class UserService {
     return this.http.post("http://localhost:1234/phmp/register",users);
 
   }
-  login(login) {
-    return this.http.post("http://localhost:1234/phmp/login",login);
-  }
   createprofile(profile) {
     return this.http.post("http://localhost:1234/phmp/profile",profile);
   }
@@ -22,7 +19,23 @@ export class UserService {
     return this.http.post("http://localhost:1234/phmp/bmi",bmi);
   }
 
-  getbmi(id) {
-    return this.http.get("http://localhost:1234/phmp/getbmi",id);
+  getbmi(id:number) {
+    return this.http.get("http://localhost:1234/phmp/getbmi/"+id);
+  }
+  getloginlist(id:number) {
+    return this.http.get("http://localhost:1234/phmp/login/"+id);
+  }
+  bloodcount(patientbloodcount){
+    return this.http.post("http://localhost:1234/phmp/bloodcount",patientbloodcount);
+  }
+  getbloodcount(id:number) {
+    return this.http.get("http://localhost:1234/phmp/getbloodcount/"+id);
+  }
+  diabetes(patientdiabetes:any){
+    //console.log(patientdiabetes);
+    return this.http.post("http://localhost:1234/phmp/diabetes",patientdiabetes);
+  }
+  getdiabetes(id:number) {
+    return this.http.get("http://localhost:1234/phmp/getdiabetes/"+id);
   }
 }

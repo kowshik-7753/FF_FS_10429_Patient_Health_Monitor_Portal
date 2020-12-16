@@ -4,4 +4,5 @@ export class bloodcount {
     public rbc:number;
     public wbc:number;
     public platelet:number;
+    public date:String;
 }

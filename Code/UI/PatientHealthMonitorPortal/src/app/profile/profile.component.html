@@ -15,30 +15,67 @@
          <tr>
             <td>age</td>
             <td><input type="text" formControlName="age"></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.age.errors?.required" style="color:red">age is required</span>
+              </td>
          </tr>
+         <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="gender" value="male"  formControlName="gender"> Male
+                <input type="radio" name="gender" value="female" formControlName="gender">
+                Female
+            </td>
+              <td>  <span *ngIf="submitted && formdata.controls.gender.errors?.required" style="color:red">gender is required</span>
+              </td>
          <tr>
             <td>EmailId</td>
             <td><input type="text" formControlName="emailid"></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.emailid.errors?.required" style="color:red">emailid is required</span>
+              </td>
+         </tr>
+         <tr>
+            <td>contactNumber</td>
+            <td><input type="text" formControlName="contactNumber"></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.contactNumber.errors?.required" style="color:red">contactNumber is required</span>
+              </td>
          </tr>
          <tr>
             <td>pinCode</td>
             <td><input type="text" formControlName="pinCode"></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.pinCode.errors?.required" style="color:red">pin Code is required</span>
+              </td>
          </tr>
          <tr>
             <td>City</td>
             <td><input type="text" formControlName="city"></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.city.errors?.required" style="color:red">city is required</span>
+              </td>
          </tr>
          <tr>
             <td>Country</td>
             <td><input type="text" formControlName="country"></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.country.errors?.required" style="color:red">country is required</span>
+              </td>
          </tr>
          <tr>
-            <td>LastName</td>
+            <td> gaurdianLastName</td>
             <td><input type="text" formControlName="gaurdianLastName"></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.gaurdianLastName.errors?.required" style="color:red">gaurdianLastName is required</span>
+              </td>
          </tr>
          <tr>
-          <td>FirstName</td>
+          <td>gaurdian FirstName</td>
           <td><input type="text" formControlName="gaurdianFirstName"></td>
+          <td> 
+            <span *ngIf="submitted && formdata.controls.gaurdianFirstName.errors?.required" style="color:red">gaurdianFirstName is required</span>
+          </td>
        </tr>
          <tr align="center">
              <td colspan="2"><input type="submit"value="Update"></td>

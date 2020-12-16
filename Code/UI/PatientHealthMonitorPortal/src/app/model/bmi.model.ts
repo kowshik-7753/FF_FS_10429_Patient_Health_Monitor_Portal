@@ -4,5 +4,5 @@ export class bmi {
     public weight:number;
     public height:number;
     public date:String;
-    public total:number;
+    public bmi:number;
 }

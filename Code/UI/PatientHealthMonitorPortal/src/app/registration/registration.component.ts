@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';//component related routing.
 import {UserService} from '../user.service'
+import { users } from '../model/users.model';
 
 @Component({
   selector: 'app-registration',
@@ -20,24 +21,29 @@ export class RegistrationComponent implements OnInit {
       age:new FormControl("",Validators.compose([Validators.required])),
       gender:new FormControl("",Validators.compose([Validators.required])),
       emailid:new FormControl("",Validators.compose([Validators.required])),
+      contactNumber:new FormControl("",Validators.compose([Validators.required])),
+      address:new FormControl("",Validators.compose([Validators.required])),
       zipCode:new FormControl("",Validators.compose([Validators.required])),
       city:new FormControl("",Validators.compose([Validators.required]))
     });
   }
+  //user:users;
 submitted:boolean;
   onClickSubmit(data) {
     this.submitted=true;
-    if(data.lastname.lenght>0) {
-      var users:any=new users();
-      users.lastName=data.lastname;
-      users.firstName=data.firstname;
-      users.password=data.password;
-      users.age=data.age;
-      users.gender=data.gender;
-      users.emailId=data.emailid;
-      users.zipCode=data.zipCode;
-      users.city=data.city;
-      this.service.createPatient(users).subscribe((response) => {
+     {
+      var user:any=new users();
+      user.lastName=data.lastname;
+      user.firstName=data.firstname;
+      user.password=data.password;
+      user.age=data.age;
+      user.gender=data.gender;
+      user.email=data.emailid;
+      user.contactNumber=data.contactNumber;
+      user.address=data.address;
+      user.zipCode=data.zipCode;
+     user.city=data.city;
+      this.service.createPatient(user).subscribe((response) => {
         console.log(response);
         this.router.navigateByUrl("/login");
       }, (error) => {

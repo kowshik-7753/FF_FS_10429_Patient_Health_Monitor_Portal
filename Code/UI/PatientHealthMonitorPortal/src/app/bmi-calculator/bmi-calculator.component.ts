@@ -17,7 +17,8 @@ formdata;
     this.formdata= new FormGroup({
       userid:new FormControl("",Validators.compose([Validators.required])),
       weight:new FormControl("",Validators.compose([Validators.required])),
-      height:new FormControl("",Validators.compose([Validators.required]))
+      height:new FormControl("",Validators.compose([Validators.required])),
+      date:new FormControl("")
     })
   }
   //bmi:bmi;
@@ -25,23 +26,23 @@ formdata;
   submitted:boolean;
   onClickSubmit(data) {
     this.submitted=true;
-    if(data.userid>0&&data.weight>0&&data.height>0) {
-    var bmi:any=new bmi();
-    bmi.userId=data.userid;
-    bmi.weight=data.weight;
-    bmi.height=data.height;
-    bmi.date=data.date;
-    this.service.bmicalculator(bmi).subscribe((response) => {
+    var patientbmi:any=new bmi();
+    patientbmi.userId=data.userid;
+    patientbmi.weight=data.weight;
+    patientbmi.height=data.height;
+    patientbmi.date=data.date;
+    patientbmi.bmi=(data.weight)/((data.height)*(data.height));
+    this.service.bmicalculator(patientbmi).subscribe((response) => {
       console.log(response);
+      console.log(patientbmi);
       //this.router.navigateByUrl("/home");
     }, (error) => {
       console.log(error);
       //this.msg = error.message;
     });
-    this.service.getbmi(data.userId).subscribe((data1)=>{
+    this.service.getbmi(data.userid).subscribe((data1)=>{
       this.persondata=Array.from(Object.keys(data1),k=>data1[k]);
     });
-  }
   }
 
 }

@@ -31,12 +31,13 @@
               </td>
          </tr>
          <tr>
-             <td>Gender</td>
-             <td><input type="radio" formControlName="gender" >Male
-                <input type="radio" >Female
-             </td>
-             <td> 
-                <span *ngIf="submitted && formdata.controls.gender.errors?.required" style="color:red">gender is required</span>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="gender" value="male"  formControlName="gender"> Male
+                <input type="radio" name="gender" value="female" formControlName="gender">
+                Female
+            </td>
+              <td>  <span *ngIf="submitted && formdata.controls.gender.errors?.required" style="color:red">gender is required</span>
               </td>
          </tr>
          <tr>
@@ -44,6 +45,20 @@
             <td><input type="text" formControlName="emailid"></td>
             <td> 
                 <span *ngIf="submitted && formdata.controls.emailid.errors?.required" style="color:red">emailid is required</span>
+              </td>
+         </tr>
+         <tr>
+            <td>ContactNumber</td>
+            <td><input type="text" formControlName="contactNumber"></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.contactNumber.errors?.required" style="color:red">contactNumber is required</span>
+              </td>
+         </tr>
+         <tr>
+            <td>Address</td>
+            <td><textarea formControlName="address"></textarea></td>
+            <td> 
+                <span *ngIf="submitted && formdata.controls.address.errors?.required" style="color:red">address is required</span>
               </td>
          </tr>
          <tr>

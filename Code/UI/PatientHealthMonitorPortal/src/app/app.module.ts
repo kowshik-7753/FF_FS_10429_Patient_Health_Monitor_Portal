@@ -10,6 +10,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { BmiCalculatorComponent } from './bmi-calculator/bmi-calculator.component';
 import { BloodCountComponent } from './blood-count/blood-count.component';
 import { DiabetesComponent } from './diabetes/diabetes.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DiabetesComponent } from './diabetes/diabetes.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

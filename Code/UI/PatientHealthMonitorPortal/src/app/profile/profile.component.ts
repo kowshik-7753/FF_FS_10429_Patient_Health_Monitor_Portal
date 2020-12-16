@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import {UserService} from '../user.service'
 import { Router } from '@angular/router';
+import { profile} from '../model/profile.model';
 
 @Component({
   selector: 'app-profile',
@@ -19,24 +20,30 @@ formdata;
       age:new FormControl("",Validators.compose([Validators.required])),
       gender:new FormControl("",Validators.compose([Validators.required])),
       emailid:new FormControl("",Validators.compose([Validators.required])),
-      pipCode:new FormControl("",Validators.compose([Validators.required])),
+      pinCode:new FormControl("",Validators.compose([Validators.required])),
       city:new FormControl("",Validators.compose([Validators.required])),
       country:new FormControl("",Validators.compose([Validators.required])),
+      contactNumber:new FormControl("",Validators.compose([Validators.required])),
       gaurdianLastName: new FormControl("",Validators.compose([Validators.required])),
       gaurdianFirstName:new FormControl("",Validators.compose([Validators.required])),
     });
   }
+ public submitted:boolean;
 onClickSubmit(data) {
-  var profile:any=new profile();
-  profile.lastName=data.lastname;
-  profile.firstName=data.firstname;
-  profile.password=data.password;
-  profile.age=data.age;
-  profile.gender=data.gender;
-  profile.emailId=data.emailid;
-  profile.pinCode=data.pinCode;
-  profile.city=data.city;
-  this.service.createprofile(profile).subscribe((response) => {
+  this.submitted=true;
+  var profile1:any=new profile();
+  profile1.userId=data.userId
+  profile1.gaurdianLastName=data.lastname;
+  profile1.gaurdianFirstName=data.firstname;
+  profile1.password=data.password;
+  profile1.age=data.age;
+  profile1.gender=data.gender;
+  profile1.email=data.emailid;
+  profile1.pinCode=data.pinCode;
+  profile1.city=data.city;
+  profile1.country=data.country;
+  profile1.contactNumber=data.contactNumber;
+  this.service.createprofile(profile1).subscribe((response) => {
     console.log(response);
     this.router.navigateByUrl("/home");
   }, (error) => {

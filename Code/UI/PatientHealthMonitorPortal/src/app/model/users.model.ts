@@ -5,7 +5,7 @@ export class users {
     public lastName:String;
     public age:number;
     public gender:String;
-    public emailId:String;
+    public email:String;
     public contactNumber:String;
     public address:String;
     public zipCode:number;
