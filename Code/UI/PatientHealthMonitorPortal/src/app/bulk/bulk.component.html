@@ -1,6 +1,6 @@
 <a href="/home">Home</a>
 <div align="center">
-    <h2>Diabetes</h2>
+    <h2>Bulk Update</h2>
     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
         <table>
             <tr>
@@ -9,6 +9,27 @@
                    <td>
                         <span *ngIf="submitted && formdata.controls.userid.errors?.required" style="color:red">User id is required</span>
                       </td>
+            </tr>
+            <tr>
+                <td>Rbc</td>
+                <td><input type="text" formControlName="rbc"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.rbc.errors?.required" style="color:red">rbc is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>Wbc</td>
+                <td><input type="text" formControlName="wbc"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.wbc.errors?.required" style="color:red">wbc is required</span>
+                  </td>
+            </tr>
+            <tr>
+                <td>platelet</td>
+                <td><input type="text" formControlName="platelet"></td>
+                <td> 
+                    <span *ngIf="submitted && formdata.controls.platelet.errors?.required" style="color:red">plattelet is required</span>
+                  </td>
             </tr>
             <tr>
                 <td>bmi</td>
@@ -52,25 +73,9 @@
                     <span *ngIf="submitted && formdata.controls.serumTriglycerides.errors?.required" style="color:red">serumTriglycerides is required</span>
                   </td>
             </tr>
-            
             <tr align="center">
                 <td colspan="3"><input type="submit" value="Submit"></td>
             </tr>
         </table>
     </form>
-</div>
-
-<div align ="center">
-    <table > 
-        <tr *ngFor ="let item of persondata;let i=index">
-            <td>{{item.userId}}|</td>
-            <td>{{item.bmi}}|</td>
-            <td>{{item.bpsystolicValue}}|</td>
-            <td>{{item.bpdiastolicValue}}|</td>
-            <td>{{item.fastingGlucose}}|</td>
-            <td>{{item.hdlCholesterol}}|</td>
-            <td>{{item.serumTriglycerides}}|</td>
-            <td>{{item.diabetesResult}}|</td>
-        </tr>
-    </table>
 </div>

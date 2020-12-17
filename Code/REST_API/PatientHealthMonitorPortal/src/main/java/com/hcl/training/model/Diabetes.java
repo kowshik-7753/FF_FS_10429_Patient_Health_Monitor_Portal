@@ -19,8 +19,8 @@ public class Diabetes {
 	private int id;
 	private int userId;
 	private float bmi;
-	private float bpSystolicValue;//bPSystolicValue
-	private float bpDiastolicValue;
+	private float bpsystolicValue;//bPSystolicValue
+	private float bpdiastolicValue;
 	private float fastingGlucose;
 	private float hdlCholesterol;
 	private float serumTriglycerides;

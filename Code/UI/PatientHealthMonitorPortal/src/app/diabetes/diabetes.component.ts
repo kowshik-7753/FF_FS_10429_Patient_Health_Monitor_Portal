@@ -24,19 +24,24 @@ export class DiabetesComponent implements OnInit {
     });
   }
   persondata=[];
-  total:Number;
+  total:number;
   public submitted:boolean;
   onClickSubmit(data) {
   this.submitted=true;
-  if(data.userid>0){
+  //if(data.userid>0)
+  if(this.formdata.invalid)
+  return ;
   this.patientdiabetes.userId=data.userid;
   this.patientdiabetes.bmi=data.bmi;
   this.patientdiabetes.bpsystolicValue=data.bpsystolicValue;
   this.patientdiabetes.bpdiastolicValue=data.bpdiastolicValue;
   this.patientdiabetes.fastingGlucose=data.fastingGlucose;
-  this.patientdiabetes.hdlcholesterol=data.hdlcholesterol;
+  this.patientdiabetes.hdlCholesterol=data.hdlcholesterol;
   this.patientdiabetes.serumTriglycerides=data.serumTriglycerides;
-  this.total=((data.bmi+data.bpsystolicValue+data.bpdiastolicValue+data.fastingGlucose+data.hdlcholesterol+data.serumTriglycerides)/6);
+  this.total=((parseInt(this.patientdiabetes.bmi)+parseInt(this.patientdiabetes.bpsystolicValue)+parseInt(this.patientdiabetes.bpdiastolicValue)+
+  parseInt(this.patientdiabetes.fastingGlucose)+parseInt(this.patientdiabetes.hdlCholesterol)+parseInt(this.patientdiabetes.serumTriglycerides))/6);
+  console.log(this.total);
+  //console.log(((data.bmi+data.bpsystolicValue+data.bpdiastolicValue+data.fastingGlucose+data.hdlcholesterol+data.serumTriglycerides)/6));
   if(this.total>90)
    this.patientdiabetes.diabetesResult="very High";
   if(this.total>70 &&this.total<90)
@@ -57,6 +62,5 @@ export class DiabetesComponent implements OnInit {
   this.service.getdiabetes(data.userid).subscribe((data1)=>{
     this.persondata=Array.from(Object.keys(data1),k=>data1[k]);
   });
-}
   }
 }

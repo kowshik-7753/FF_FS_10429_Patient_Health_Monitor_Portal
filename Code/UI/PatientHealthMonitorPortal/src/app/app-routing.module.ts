@@ -7,6 +7,7 @@ import{ HomeComponent } from './home/home.component';
 import{BmiCalculatorComponent}from'./bmi-calculator/bmi-calculator.component';
 import{BloodCountComponent}from'./blood-count/blood-count.component';
 import{DiabetesComponent} from'./diabetes/diabetes.component';
+import{BulkComponent} from './bulk/bulk.component'
 
 const routes: Routes = [{path:"register",component:RegistrationComponent},
 {path:"login",component:LoginComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [{path:"register",component:RegistrationComponent},
 {path:"home",component:HomeComponent},
 {path:"bmi",component:BmiCalculatorComponent},
 {path:"bloodcount",component:BloodCountComponent},
-{path:"diabetes",component:DiabetesComponent}];
+{path:"diabetes",component:DiabetesComponent},
+{path:"bulk",component:BulkComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -22,4 +24,4 @@ const routes: Routes = [{path:"register",component:RegistrationComponent},
 })
 export class AppRoutingModule { }
 export const RoutingComponent = [RegistrationComponent,LoginComponent,ProfileComponent,HomeComponent,BmiCalculatorComponent,
-  BloodCountComponent,DiabetesComponent];
+  BloodCountComponent,DiabetesComponent,BulkComponent];

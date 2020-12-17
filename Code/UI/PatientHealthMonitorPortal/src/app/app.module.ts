@@ -11,6 +11,7 @@ import { BmiCalculatorComponent } from './bmi-calculator/bmi-calculator.componen
 import { BloodCountComponent } from './blood-count/blood-count.component';
 import { DiabetesComponent } from './diabetes/diabetes.component';
 import {HttpClientModule} from '@angular/common/http';
+import { BulkComponent } from './bulk/bulk.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {HttpClientModule} from '@angular/common/http';
     ProfileComponent,
     BmiCalculatorComponent,
     BloodCountComponent,
-    DiabetesComponent
+    DiabetesComponent,
+    BulkComponent
   ],
   imports: [
     BrowserModule,
