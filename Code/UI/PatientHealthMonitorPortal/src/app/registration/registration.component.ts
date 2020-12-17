@@ -31,7 +31,7 @@ export class RegistrationComponent implements OnInit {
 submitted:boolean;
   onClickSubmit(data) {
     this.submitted=true;
-     {
+     if(data.password.lenght>6){
       var user:any=new users();
       user.lastName=data.lastname;
       user.firstName=data.firstname;

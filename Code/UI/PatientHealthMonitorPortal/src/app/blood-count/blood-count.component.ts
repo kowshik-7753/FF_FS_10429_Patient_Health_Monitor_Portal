@@ -25,6 +25,7 @@ public persondata=[];
   public submitted:boolean;
 onClickSubmit(data) {
   this.submitted=true;
+  if(data.userid>0){
   var patientbloodcount:any=new bloodcount();
     patientbloodcount.userId=data.userid;
     patientbloodcount.rbc=data.rbc;
@@ -41,5 +42,6 @@ onClickSubmit(data) {
     this.service.getbloodcount(data.userid).subscribe((data1)=>{
       this.persondata=Array.from(Object.keys(data1),k=>data1[k]);
     });
+  }
 }
 }

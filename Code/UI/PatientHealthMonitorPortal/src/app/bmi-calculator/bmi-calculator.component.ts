@@ -26,6 +26,7 @@ formdata;
   submitted:boolean;
   onClickSubmit(data) {
     this.submitted=true;
+    if(data.userid>0){
     var patientbmi:any=new bmi();
     patientbmi.userId=data.userid;
     patientbmi.weight=data.weight;
@@ -43,6 +44,7 @@ formdata;
     this.service.getbmi(data.userid).subscribe((data1)=>{
       this.persondata=Array.from(Object.keys(data1),k=>data1[k]);
     });
+  }
   }
 
 }

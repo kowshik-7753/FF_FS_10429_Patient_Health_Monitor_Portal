@@ -28,7 +28,7 @@ export class DiabetesComponent implements OnInit {
   public submitted:boolean;
   onClickSubmit(data) {
   this.submitted=true;
-  
+  if(data.userid>0){
   this.patientdiabetes.userId=data.userid;
   this.patientdiabetes.bmi=data.bmi;
   this.patientdiabetes.bpsystolicValue=data.bpsystolicValue;
@@ -57,5 +57,6 @@ export class DiabetesComponent implements OnInit {
   this.service.getdiabetes(data.userid).subscribe((data1)=>{
     this.persondata=Array.from(Object.keys(data1),k=>data1[k]);
   });
+}
   }
 }

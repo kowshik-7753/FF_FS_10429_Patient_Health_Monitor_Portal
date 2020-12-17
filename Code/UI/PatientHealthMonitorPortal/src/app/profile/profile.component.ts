@@ -31,6 +31,7 @@ formdata;
  public submitted:boolean;
 onClickSubmit(data) {
   this.submitted=true;
+  if(data.age>18){
   var profile1:any=new profile();
   profile1.userId=data.userId
   profile1.gaurdianLastName=data.lastname;
@@ -50,5 +51,6 @@ onClickSubmit(data) {
     console.log(error);
     //this.msg = error.message;
   });
+}
 }
 }
