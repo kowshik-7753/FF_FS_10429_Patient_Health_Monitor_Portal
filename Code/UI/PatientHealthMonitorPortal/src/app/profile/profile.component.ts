@@ -13,9 +13,11 @@ export class ProfileComponent implements OnInit {
 
   constructor(private service:UserService,private router:Router) { }
 formdata;
+id:number;
   ngOnInit(): void {
+    this.id=JSON.parse(localStorage.getItem("id"));
     this.formdata= new FormGroup({
-      userId:new FormControl("",Validators.compose([Validators.required])),
+      userId:new FormControl(this.id,Validators.compose([Validators.required])),
       password:new FormControl("",Validators.compose([Validators.required])),
       age:new FormControl("",Validators.compose([Validators.required])),
       gender:new FormControl("",Validators.compose([Validators.required])),

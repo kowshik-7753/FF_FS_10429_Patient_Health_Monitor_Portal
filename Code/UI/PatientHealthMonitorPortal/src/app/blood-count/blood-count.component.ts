@@ -9,12 +9,14 @@ import { bloodcount } from '../model/bloodcount.model';
   styleUrls: ['./blood-count.component.css']
 })
 export class BloodCountComponent implements OnInit {
-public persondata=[];
+public persondata:any[];
   constructor(private service:UserService) { }
   formdata;
+  id:number;
   ngOnInit(): void {
+    this.id=JSON.parse(localStorage.getItem("id"));
     this.formdata= new FormGroup({
-      userid:new FormControl("",Validators.compose([Validators.required])),
+      userid:new FormControl(this.id,Validators.compose([Validators.required])),
       rbc:new FormControl("",Validators.compose([Validators.required])),
       wbc:new FormControl("",Validators.compose([Validators.required])),
       platelet:new FormControl("",Validators.compose([Validators.required])),

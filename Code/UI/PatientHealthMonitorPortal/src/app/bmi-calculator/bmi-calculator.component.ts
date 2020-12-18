@@ -13,16 +13,20 @@ export class BmiCalculatorComponent implements OnInit {
 
   constructor(private router:Router,private service:UserService) { }
 formdata;
+id:number;
   ngOnInit(): void {
+    this.id=JSON.parse(localStorage.getItem("id"));
     this.formdata= new FormGroup({
-      userid:new FormControl("",Validators.compose([Validators.required])),
+      userid:new FormControl(this.id,Validators.compose([Validators.required])),
       weight:new FormControl("",Validators.compose([Validators.required])),
       height:new FormControl("",Validators.compose([Validators.required])),
       date:new FormControl("")
     })
   }
   //bmi:bmi;
-  public persondata=[]
+ 
+
+  public persondata:any[];
   submitted:boolean;
   onClickSubmit(data) {
     this.submitted=true;

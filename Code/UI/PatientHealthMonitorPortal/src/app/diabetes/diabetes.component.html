@@ -1,11 +1,11 @@
 <a href="/home">Home</a>
 <div align="center">
-    <h2>Diabetes</h2>
+    <h2 style="color:blueviolet">Diabetes</h2>
     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
         <table>
             <tr>
                 <td>UserId</td>
-                <td><input type="text" formControlName="userid"></td>
+                <td><input type="text" formControlName="userid" disabled></td>
                    <td>
                         <span *ngIf="submitted && formdata.controls.userid.errors?.required" style="color:red">User id is required</span>
                       </td>
@@ -60,8 +60,18 @@
     </form>
 </div>
 
-<div align ="center">
-    <table > 
+<div align ="center" *ngif="persondata">
+    <table border="1" > 
+        <tr>
+            <td>UserId</td>
+            <td>item.bmi</td>
+            <td>item.bpsystolicValue</td>
+            <td>item.bpdiastolicValue</td>
+            <td>item.fastingGlucose</td>
+            <td>item.hdlCholesterol</td>
+            <td>item.serumTriglycerides</td>
+            <td>item.diabetesResult</td>
+        </tr>
         <tr *ngFor ="let item of persondata;let i=index">
             <td>{{item.userId}}|</td>
             <td>{{item.bmi}}|</td>

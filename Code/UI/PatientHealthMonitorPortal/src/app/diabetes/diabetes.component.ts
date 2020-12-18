@@ -12,9 +12,11 @@ export class DiabetesComponent implements OnInit {
  patientdiabetes:any=new Diabetes();
   constructor(private service:UserService) { }
   formdata;
+  id:number;
   ngOnInit(): void {
+    this.id=JSON.parse(localStorage.getItem("id"));
     this.formdata= new FormGroup({
-      userid: new FormControl("",Validators.compose([Validators.required])),
+      userid: new FormControl(this.id,Validators.compose([Validators.required])),
       bmi:new FormControl("",Validators.compose([Validators.required])),
       bpsystolicValue:new FormControl("",Validators.compose([Validators.required])),
       bpdiastolicValue:new FormControl("",Validators.compose([Validators.required])),

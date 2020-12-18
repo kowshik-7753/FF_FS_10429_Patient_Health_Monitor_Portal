@@ -5,7 +5,7 @@
         <table>
             <tr>
                 <td>UserId</td>
-                <td><input type="text" formControlName="userid"></td>
+                <td><input type="text" formControlName="userid" disabled></td>
                    <td>
                         <span *ngIf="submitted && formdata.controls.userid.errors?.required" style="color:red">User id is required</span>
                       </td>
@@ -44,8 +44,15 @@
         </table>
     </form>
 </div>
-<div align="center">
-    <table>
+<div align="center" *ngIf="persondata"> 
+    <table border="1">
+        <tr>
+            <td>UserId</td>
+            <td>Rbc</td>
+            <td>Rbc</td>
+            <td>Platelet</td>
+             <td>Date</td> 
+        </tr>
         <tr *ngFor ="let item of persondata;let i=index">
             <td>{{item.userId}}|</td>
             <td>{{item.rbc}}|</td>
