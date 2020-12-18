@@ -1,4 +1,9 @@
 <a href="/home">Home</a>
+<div align="right">
+    <nav>
+        <a  routerLink="/">logout</a>
+    </nav>
+    </div>
 <div align="center">
     <h2 style="color:blueviolet">BMI Calculator</h2>
     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">

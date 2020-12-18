@@ -25,7 +25,7 @@ export class DiabetesComponent implements OnInit {
       serumTriglycerides:new FormControl("",Validators.compose([Validators.required]))
     });
   }
-  persondata=[];
+  persondata:any[];
   total:number;
   public submitted:boolean;
   onClickSubmit(data) {

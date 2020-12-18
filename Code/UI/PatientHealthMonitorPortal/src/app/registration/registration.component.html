@@ -2,19 +2,20 @@
     <h2 style="color:blueviolet">Registration Form</h2>
     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
         <table>
-            <tr>
-              <td>LastName</td>
-              <td><input type="text" formControlName="lastname"></td>
-              <td> 
-                <span *ngIf="submitted && formdata.controls.lastname.errors?.required" style="color:red">Last Nameis required</span>
-              </td>
-           </tr>
+           
            <tr>
             <td>FirstName</td>
             <td><input type="text" formControlName="firstname"></td>
             <td> 
                 <span *ngIf="submitted && formdata.controls.firstname.errors?.required" style="color:red">First Name is required</span>
               </td>
+         </tr>
+         <tr>
+            <td>LastName</td>
+            <td><input type="text" formControlName="lastname"></td>
+            <td> 
+              <span *ngIf="submitted && formdata.controls.lastname.errors?.required" style="color:red">Last Nameis required</span>
+            </td>
          </tr>
          <tr>
             <td>Password</td>

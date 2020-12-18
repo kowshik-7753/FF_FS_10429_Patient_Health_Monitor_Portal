@@ -24,11 +24,13 @@ msg="";
   }
   //loin:login;
   id;
+  name=String;
   password1;
   listdata=[];
   submitted:boolean;
   onClickSubmit(data) {
     localStorage.setItem("id",JSON.stringify(data.userid));
+    localStorage.setItem("name",JSON.stringify(data.lastName));
     this.submitted=true;
     this.id=data.userid;
     this.password1=data.password;

@@ -1,4 +1,9 @@
  <a href="/home">Home</a>
+ <div align="right">
+    <nav>
+        <a  routerLink="/">logout</a>
+    </nav>
+    </div>
 <div align="center">
     <h2 style="color:blueviolet">Blood Count</h2>
     <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
@@ -54,10 +59,10 @@
              <td>Date</td> 
         </tr>
         <tr *ngFor ="let item of persondata;let i=index">
-            <td>{{item.userId}}|</td>
-            <td>{{item.rbc}}|</td>
-            <td>{{item.wbc}}|</td>
-            <td>{{item.platelet}}|</td>
+            <td>{{item.userId}}</td>
+            <td>{{item.rbc}}</td>
+            <td>{{item.wbc}}</td>
+            <td>{{item.platelet}}</td>
              <td>{{item.date}}</td> 
         </tr>
     </table>

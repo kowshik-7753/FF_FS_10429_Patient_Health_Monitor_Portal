@@ -8,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
-
+name=String;
   ngOnInit(): void {
+   // this.name=JSON.parse(localStorage.getItem("name"));
   }
 
 }
